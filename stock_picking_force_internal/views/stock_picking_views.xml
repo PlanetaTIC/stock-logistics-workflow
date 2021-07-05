@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 PlanetaTIC - Marc Poch <mpoch@planetatic.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<data>
+
+<record id="view_picking_force_internal_form" model="ir.ui.view">
+    <field name="name">stock.picking.force.internal.form</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form"/> 
+    <field name="arch" type="xml">
+        <header position="inside">
+            <button name="force_internal" attrs="{'invisible': ['|', ('show_check_availability', '=', False), ('picking_type_code', '!=', 'internal')]}" string="Force Handover" type="object" class="oe_highlight" groups="base.group_user"/>
+        </header>
+    </field>
+</record>
+
+</data>
+</odoo>
